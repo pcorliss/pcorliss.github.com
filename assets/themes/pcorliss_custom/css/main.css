@@ -102,6 +102,43 @@ body {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+code {
+white-space: nowrap;
+
+margin: 0 2px;
+padding: 0px 5px;
+border: 1px solid #eaeaea;
+background-color: #f8f8f8;
+border-radius: 3px;
+
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre, code {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+  margin: 15px 0;
+  display: block;
+  font-family: monospace;
+  white-space: pre;
+}
+
 header .banner {
   height: 100%;
   margin: 0px;
@@ -187,8 +224,8 @@ header .hero .avatar {
 }
 
 #main-content article a {
-  color: #333;
-  text-decoration: none;
+  /*color: #333;*/
+  /*text-decoration: none;*/
 }
 
 #main-content article h1 {

@@ -7,31 +7,4 @@ comments: false
 
 <div class='post'>
 Last night just as I was struggling to figure out which project I would work on this week I saw a <a href="http://news.ycombinator.com/item?id=1974008">post on Hacker News</a> regarding Amazon's latest web services offering. <a href="http://aws.amazon.com/about-aws/whats-new/2010/12/06/announcing-amazon-route-53-dns-service/">Route 53</a> offers programmatic control of Amazon's globally based DNS service designed for a high volume of queries. At $1/domain/month with additional charges for high query volume it's questionable whether this service will take off for the general consumer market given that most domain registrars provide DNS for free already. However in the professional market where the needs for highly configurable, low TTL, low latency DNS services is necessary Route 53 could be a contender.<br /><br />As the service was just released it doesn't have a generally usable front end. The getting started documentation has the user editing XML files to begin using the service. I'm uncertain if this is a deliberate attempt by Amazon to get the developer community to build the tools to interact with the service or just a function of the product being in beta mode still. Regardless I'm taking the bait.<br /><br /><b>Project Summary:</b> Create an interface for Route 53<br /><br /><b>Features:</b><br /><ul><li>Ruby Gem based</li><li>Command Line Interface</li><li>Easy to Use Programmatic Control</li><li>Simple web front end</li></ul><b>Edit:</b> <a href="http://blog.50projects.com/2010/12/amazon-route-53-interface-wednesday.html">Early prototype of a ruby library for Amazon's Route 53 is now available</a><br /><br /><b>Edit 2:</b> No longer a prototype <a href="http://blog.50projects.com/2010/12/amazon-route-53-interface-friday.html%20">http://blog.50projects.com/2010/12/amazon-route-53-interface-friday.html </a></div>
-<h2>Comments</h2>
-<div class='comments'>
-<div class='comment'>
-<div class='author'>Nisha</div>
-<div class='content'>
-This comment has been removed by a blog administrator.</div>
-</div>
-<div class='comment'>
-<div class='author'>Philip Corliss</div>
-<div class='content'>
-An early prototype is now available. No documentation right now but this should help get you started.<br /><br />https://github.com/pcorliss/ruby_route_53<br />https://rubygems.org/gems/route53</div>
-</div>
-<div class='comment'>
-<div class='author'>Anonymous</div>
-<div class='content'>
-Funny thing I was just looking for a solution for this today.  BTW Amazon historically does not bait.  #1 every single service they have starts with a API web service since they are designed to be used programmatically.  #2 EC2 didn&#39;t even have an interface for at least a year after launch.  That said I don&#39;t use any of their services on the scale they were designed to be used so I love interfaces for them.</div>
-</div>
-<div class='comment'>
-<div class='author'>Philip Corliss</div>
-<div class='content'>
-The project is underway and going well. I currently have a small ruby library to perform basic CRUD operations and hope to have something worth posting on GitHub by the end of the day. Check back on the blog for updates.</div>
-</div>
-<div class='comment'>
-<div class='author'>plamont</div>
-<div class='content'>
-I&#39;d be interested to know how you went with this project?</div>
-</div>
 </div>
