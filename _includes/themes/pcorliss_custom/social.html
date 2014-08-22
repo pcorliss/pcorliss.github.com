@@ -1,37 +1,45 @@
 <div class="social">
-  <span class="fa-stack fa">
-    <a href="https://twitter.com/pcorliss">
-      <i class="fa fa-fw fa-circle fa-stack-2x"></i>
-      <i class="fa fa-fw fa-twitter fa-stack-1x fa-inverse"></i>
-    </a>
-  </span>
+  {% if site.author.twitter %}
+    <span class="fa-stack fa">
+      <a href="https://twitter.com/{{ site.author.twitter }}">
+        <i class="fa fa-fw fa-circle fa-stack-2x"></i>
+        <i class="fa fa-fw fa-twitter fa-stack-1x fa-inverse"></i>
+      </a>
+    </span>
+  {% endif %}
 
-  <span class="fa-stack fa">
-    <a href="https://github.com/pcorliss">
-      <i class="fa fa-fw fa-circle fa-stack-2x"></i>
-      <i class="fa fa-fw fa-git fa-stack-1x fa-inverse"></i>
-    </a>
-  </span>
+  {% if site.author.github %}
+    <span class="fa-stack fa">
+      <a href="https://github.com/{{ site.author.github }}">
+        <i class="fa fa-fw fa-circle fa-stack-2x"></i>
+        <i class="fa fa-fw fa-git fa-stack-1x fa-inverse"></i>
+      </a>
+    </span>
+  {% endif %}
 
-  <span class="fa-stack fa">
-    <a href="https://www.linkedin.com/in/philipcorliss">
-      <i class="fa fa-fw fa-circle fa-stack-2x"></i>
-      <i class="fa fa-fw fa-linkedin fa-stack-1x fa-inverse"></i>
-    </a>
-  </span>
+  {% if site.author.linkedin %}
+    <span class="fa-stack fa">
+      <a href="https://www.linkedin.com/in/{{ site.author.linkedin }}">
+        <i class="fa fa-fw fa-circle fa-stack-2x"></i>
+        <i class="fa fa-fw fa-linkedin fa-stack-1x fa-inverse"></i>
+      </a>
+    </span>
+  {% endif %}
 
-  <span class="fa-stack fa">
-    <a href="mailto:pcorliss@gmail.com">
-      <i class="fa fa-fw fa-circle fa-stack-2x"></i>
-      <i class="fa fa-fw fa-envelope fa-stack-1x fa-inverse"></i>
-    </a>
-  </span>
+  {% if site.author.email %}
+    <span class="fa-stack fa">
+      <a href="mailto:{{ site.author.email }}">
+        <i class="fa fa-fw fa-circle fa-stack-2x"></i>
+        <i class="fa fa-fw fa-envelope fa-stack-1x fa-inverse"></i>
+      </a>
+    </span>
+  {% endif %}
 
-  <span class="fa-stack fa">
-    <a href="/feedfoo">
-      <i class="fa fa-fw fa-circle fa-stack-2x"></i>
-      <i class="fa fa-fw fa-rss fa-stack-1x fa-inverse"></i>
-    </a>
-  </span>
+    <span class="fa-stack fa">
+      <a href="/atom.xml">
+        <i class="fa fa-fw fa-circle fa-stack-2x"></i>
+        <i class="fa fa-fw fa-rss fa-stack-1x fa-inverse"></i>
+      </a>
+    </span>
 </div>
 

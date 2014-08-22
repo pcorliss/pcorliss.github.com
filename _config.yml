@@ -8,14 +8,16 @@ highlighter: pygments
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title : ''
-tagline: ''
-author :
-  name : Philip Corliss
-  email : pcorliss@gmail.com
-  github : pcorliss
-  twitter : pcorliss
-  feedburner : feedname
+title: Philip Corliss
+tagline:
+author:
+  name: Philip Corliss
+  email: pcorliss@gmail.com
+  github: pcorliss
+  twitter: pcorliss
+  linkedin: philipcorliss
+  feedburner:
+  avatar: https://s.gravatar.com/avatar/6758b2a88ae70a4304986e3470a98d2e?s=80
 
 
 # The production_url is only used when full-domain names are needed
