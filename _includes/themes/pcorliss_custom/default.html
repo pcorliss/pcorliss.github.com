@@ -44,17 +44,30 @@
   </head>
 
   <body>
-    <a class="brand" href="{{ HOME_PATH }}">{{ site.title }}</a>
-
     <div id="container" class="container">
+      <header role="banner">
+        <div class="banner">
+            <img src="{{ ASSET_PATH }}/img/background.jpg">
+        </div>
+        <div class="darken"></div>
+        <div class="hero">
+          <a href="{{ HOME_PATH }}">
+            <img src="{{ site.author.avatar }}" class="avatar">
+          </a>
+          <h1><a href="{{ HOME_PATH }}">{{ site.title }}</a></h1>
+          <h2><a href="{{ HOME_PATH }}">{{ site.tagline }}</a></h2>
+          {% include themes/pcorliss_custom/social.html %}
+        </div>
+      </header>
 
-      <div class="content">
-        {{ content }}
+      <div id="main-content" role="main">
+        <div id="article-body">
+          {{ content }}
+        </div>
       </div>
-      <hr>
-
 
       <footer id="page-footer">
+        Archive ...
         {% include themes/pcorliss_custom/social.html %}
         <p>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}</p>
         <small>Cover Image by By <a href="http://www.cocopine.co.za/">Glen Carrie</a></small>

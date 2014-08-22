@@ -156,7 +156,15 @@ header .hero .avatar {
   animation-fill-mode: both;
 }
 
-.hero h1 {}
+.hero h1 a {
+  text-decoration: none;
+  color: white;
+}
+
+.hero h2 a {
+  text-decoration: none;
+  color: #ccc;
+}
 
 .social {
   font-size: 1.5em;
