@@ -1,0 +1,9 @@
+---
+layout: post
+title: "Lazy Raid - Wednesday"
+date: 2010-11-10
+comments: false
+---
+
+<div class='post'>
+Things are coming along a little slowly but I felt I'd share the following code tidbit so others don't run into the same trouble I did.<br /><pre>class String<br />  def ^ (second)<br />    s = ""<br />    s.force_encoding("ASCII-8BIT")<br />    [self.size,second.size].max.times do |i|<br />      s &lt;&lt; ((self[i] || 0).ord ^ (second[i] || 0).ord)<br />    end<br />    return s<br />  end<br />end<br /></pre><a href="http://www.ruby-forum.com/topic/95760">via http://www.ruby-forum.com/topic/95760</a><br /><br />It looks like Ruby doesn't have the XOR function available for Strings. This causes some issues when you're working on computing parity blocks for binary data like I am. Further complicating matters is that there are several examples for computing XOR for strings but most of the posts on the subject are from prior to Ruby 1.9 which introduced new defaults for accessing Strings like they're arrays. Prior to Ruby 1.9 "foo"[0] would return 102 or the ASCII value of "f". Now it returns "f". Which is great because that's what most people probably expect. But all previous examples that relied on this behavior don't work.</div>

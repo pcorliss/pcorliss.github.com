@@ -1,0 +1,17 @@
+---
+layout: post
+title: "S3Cmd Modifications - Thursday"
+date: 2010-08-26
+comments: false
+---
+
+<div class='post'>
+Part of the work I've been doing with s3cmd is to add in a threading feature. This should speed up data transfers to s3 for data sets of more than a few files. I got this working on Tuesday and spent part of Wednesday refining it and expanding it such that output is what you would expect and adding some basic error handling. The results of some simple threading have been impressive so far. Anytime you can get an <b>8x</b> speed boost I'd consider that a win. See below for the breakdown.<br /><br />A few challenges surrounding error handling have cropped up. I'll have to spend some extra time making sure they're handled properly and don't cause the program to hang. Also python's whitespace sensitivity and syntax is really starting to irritate me. Perhaps a framework like <a href="http://www.djangoproject.com/">Django</a> will turn it around for me. But I have to say I'm not sure I'll want to go back once this week is over.<br /><br /><b>Generated 1000 16K files from random data.</b><br /><code>pcorliss@hawaii:~/projects/s3cmd$ ls rand | wc -l<br />1001<br />pcorliss@hawaii:~/projects/s3cmd$ du -s rand<br />16032&nbsp;&nbsp;&nbsp; rand</code><br /><br /><b>s3cmd from ubuntu 10.04 repository</b><br /><code>pcorliss@hawaii:~/projects/s3cmd$ time s3cmd put rand/* s3://50proj-test-bucket/rand/<br />rand/0.out -&gt; s3://50proj-test-bucket/rand/0.out&nbsp; [1 of 1001]<br />&nbsp;16384 of 16384&nbsp;&nbsp; 100% in&nbsp;&nbsp;&nbsp; 0s&nbsp;&nbsp;&nbsp; 20.71 kB/s&nbsp; done<br />rand/1.out -&gt; s3://50proj-test-bucket/rand/1.out&nbsp; [2 of 1001]<br />&nbsp;16384 of 16384&nbsp;&nbsp; 100% in&nbsp;&nbsp;&nbsp; 0s&nbsp;&nbsp;&nbsp; 47.86 kB/s&nbsp; done<br />...<br />real&nbsp;&nbsp;&nbsp; 6m27.871s<br />user&nbsp;&nbsp;&nbsp; 0m2.400s<br />sys&nbsp;&nbsp;&nbsp; 0m0.810s</code><br /><br /><b>s3cmd trunk with threading modifications</b><br /><code>pcorliss@hawaii:~/projects/s3cmd$ time ./source/s3cmd --parallel put rand/* s3://50proj-test-bucket/rand/<br />File 'rand/1.out' stored as 's3://50proj-test-bucket/rand/1.out' (16384 bytes in 0.5 seconds, 31.49 kB/s) [2 of 1001]<br />File 'rand/103.out' stored as 's3://50proj-test-bucket/rand/103.out' (16384 bytes in 0.5 seconds, 29.75 kB/s) [7 of 1001]<br />File 'rand/104.out' stored as 's3://50proj-test-bucket/rand/104.out' (16384 bytes in 0.5 seconds, 29.58 kB/s) [8 of 1001]<br />File 'rand/100.out' stored as 's3://50proj-test-bucket/rand/100.out' (16384 bytes in 0.5 seconds, 29.24 kB/s) [4 of 1001]<br />...<br />real&nbsp;&nbsp;&nbsp; 0m47.216s<br />user&nbsp;&nbsp;&nbsp; 0m2.010s<br />sys&nbsp;&nbsp;&nbsp; 0m0.790s</code></div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Alexander B.</div>
+<div class='content'>
+I&#39;ve tried the current git of your modifications to s3 and it helped our cause a great deal. Uploading a thousand files is now a matter of seconds/bandwidth. :)<br /><br />On a plain Debian Lenny install with python 2.5 I had to patch s3cmd though it seems. I&#39;m by no means an expert but a simple:<br /><br />sed &#39;s@threading.active_count@threading.activeCount&#39; -i s3cmd<br /><br />fixed it for me.<br /><br />Cheers,<br />Alex</div>
+</div>
+</div>

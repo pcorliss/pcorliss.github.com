@@ -1,0 +1,22 @@
+---
+layout: post
+title: "Friend Boost - Saturday"
+date: 2010-09-18
+comments: false
+---
+
+<div class='post'>
+Released! I need to do a little more testing to ensure email delivery works. But overall it's ready to go and be used. The concept is simple, you login with your facebook credentials, you're presented with a list of your friends. You select how often you'd like to contact them and optionally opt-in to the email reminder service. It's small, simple and I hope useful to the folks out there like myself that can't stay in touch with friends.<br /><br /><b>Go manage those relationships!</b><br /><a href="http://booster.50projects.com/">http://booster.50projects.com</a>/<br /><br /><b>A few things that went better than expected</b><br /><ul><li><a href="http://heroku.com/pricing">Heroku</a> has a freemium business model. The free plan, which I'm using, allows a single concurrent HTTP connection and a 5Mb database. If you're looking for more than one concurrent connection the prices jump up significantly. I imagine I'll switch to a <a href="http://www.linode.com/">Linode</a> instance as soon as I get enough traffic to warrant it.</li></ul><ul><li><a href="http://sendgrid.com/pricing.html">SendGrid</a> provides a decent SMTP host and they also have a freemium model. The free plan includes 200 emails per day. After that the prices are quite reasonable.</li></ul><b>Challenges</b><br /><ul><li>As mentioned on Friday, I'm not terribly happy with the design but I do think my design and layout skills are slowly improving.</li><li>Scope decreased dramatically early on as I realized no one wanted to  click a hundred boxes every week to signify whether they had been in  touch with someone.</li><li>Perhaps I just need to work with more frameworks but starting from scratch with rails is a pain if you don't know where you're going. Rails does so much behind the scenes that it feels like an uphill battle as soon as I want to go beyond the basic scaffolding.</li></ul><b>Features Missed</b><br /><ul><li>Unfortunately Facebook doesn't allow you to send private messages to users. So I had to implement an email service instead of something internal to facebook. Not terribly but I would have liked to avoid collecting emails and then setting up SendGrid.</li><li>Facebook also doesn't allow you to collect phone number information. Which means any sort of VOIP integration wasn't an option.</li></ul></div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>JB</div>
+<div class='content'>
+Guess we&#39;re past the booster week, but is there any sorting I&#39;m not noticing on the list of friends? Some name-based order would make it more user friendly.</div>
+</div>
+<div class='comment'>
+<div class='author'>Andrew Allen</div>
+<div class='content'>
+Sounds like you could use the help of a designer.<br /><br />Facebook does have notifications. Would be cool if there was a way to tap into that.</div>
+</div>
+</div>

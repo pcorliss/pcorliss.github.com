@@ -1,0 +1,9 @@
+---
+layout: post
+title: "Image Processing - Monday"
+date: 2010-08-16
+comments: false
+---
+
+<div class='post'>
+It's time for a meat and potatoes, backend project. The first project was designed to be small and contained but it still took me until Saturday to finish it. This week I'll be taking on something much more ambitious. Prior to 50projects I worked at a number of companies that handled images in various capacities so the concept isn't entirely new. This service will be similar in a few respects, notably that it will transform images, it will use <a href="http://www.imagemagick.org/">ImageMagick</a> libraries to do so and it will optionally use Amazon S3 to store images. However this will be an entirely new product using unique ideas conceived of separately from previous work environments. In other words please don't sue me. <br /><br /><b>Project Summary: </b>A web service to handle image transforms, storage and caching of images for use by web sites.<br /><br /><b>Features</b><br /><ul><li><a href="http://www.jmagick.org/index.html">jMagick</a> versus <a href="http://rmagick.rubyforge.org/">rMagick</a> comparison - which is faster</li><li>Upload original Images</li><li>Download transformed Images</li><li>Admin page to configure parameters</li><li><a href="http://varnish-cache.org/">Varnish</a> caching for faster serving</li><li>Source code on GitHub</li><li>Sample code for integration</li></ul><b>Monetization Features</b><br /><ul><li>32-bit and 64-bit versions on amazon's AMI marketplace </li></ul><b>If There's Time</b><br /><ul><li><a href="http://aws.amazon.com/sqs/">SQS</a> for large scale distributed processing</li></ul></div>

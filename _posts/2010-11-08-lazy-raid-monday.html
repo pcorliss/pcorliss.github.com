@@ -1,0 +1,9 @@
+---
+layout: post
+title: "Lazy Raid - Monday"
+date: 2010-11-08
+comments: false
+---
+
+<div class='post'>
+About 4 years ago I started collecting a lot of digital media. I'm going to skip over how this content was procured. At the time I was storing it on my desktop computer's hard drive and using XBMC to stream it to hacked original XBOX. It worked great until I started running out of disk space. So I bought a few more hard drives and everything was fine until those filled up. So I bought some external enclosures and more disks. Eventually those filled up too.<br /><br />At this point I had an idea to build a client side program that would lazily create parity blocks across a disparate set of drives to maintain the drive's independence from one another and also create a small safety net in case one of the drives should fail. A very similar system to this already exists in a <a href="http://en.wikipedia.org/wiki/RAID_5#RAID_5">RAID-5</a> set, <a href="http://en.wikipedia.org/wiki/Non-standard_RAID_levels#UnRAID">UnRAID</a> and <a href="http://www.drobo.com/">Drobo</a> devices. But all of those rely on either a dedicated device or system. This would be an independent client that would run as a daemon on a host system. I spent a couple of weekends working on the project but never finished it. The software was written in Perl and I'm guessing was probably quite a mess given my standards today. This week I'll be starting fresh and hopefully finishing it off.<br /><br /><b>Project Summary:</b> Build a RAID like system for storing data independent from the host system.<br /><br /><b>Features:</b><br /><ul><li>Single disk failure redundancy</li><li>Double disk failure redundancy</li><li>Background parity calculations</li><li>Consistency checks</li><li>FUSE integration</li></ul></div>

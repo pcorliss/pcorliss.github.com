@@ -1,0 +1,22 @@
+---
+layout: post
+title: "Intelligent Address Entry - Released - Saturday"
+date: 2010-08-14
+comments: false
+---
+
+<div class='post'>
+Just finished up the last revision to the demo scripts and attached an amazon payments link for commercial licenses. Since Thursday I've cleaned up the error handling (Thanks JB!), tested it for compatibility with all major browsers past and present and connected the data backend to Amazon's Cloud Front CDN for faster loading. The CDN setup was more experimental than necessary. But the incremental cost should be trivial for now.<br /><br />Items that I'm glad I touched on and will definitely come in handy in the future included jQuery, Amazon Cloud Front and Amazon Simple Pay. I'm certain these will be used multiple times in the future.<br /><br />One item turned out to be challenges that I didn't expect. Setting Amazon's Cloud Front default root object is a pain with the current tools available. I ended up using a development build of a <a href="http://code.google.com/p/boto/">3rd party python library</a> to set the parameter. As Amazon's Management Console doesn't have a setting exposed.<br /><br />A couple of features didn't end up getting built. For starters this didn't turn into a JavaScript library like I had intended on Monday. I provided a demo for folks to get started on integrating this into their own products but the demo didn't really include any original code.<br /><br />Another item that didn't go as planned was global address storage via cookie for users. The more I thought about it the more I realized what a giant privacy mess it could turn into. The work put into it was abandoned shortly thereafter.<br /><br />The final scripts, data and implementation details are below. As well as a payment link for commercial use. If you have an questions please direct them to me at <A href="mailto:pcorliss@50projects.com">pcorliss@50projects.com</A><br /><br /><iframe frameborder=0 src ="http://zip.50projects.com" width="100%" height="300"><br /><p>Looks like the iframe isn't working. You can go here instead <a href="http://zip.50projects.com">http://zip.50projects.com</a></p></iframe><br /><br /><a href="http://zip.50projects.com">http://zip.50projects.com</a></div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Philip Corliss</div>
+<div class='content'>
+I&#39;ll definitely announce my first dollar earned and have periodic updates on finances. However right now my balance sheet isn&#39;t terribly exciting.<br /><br />Revenue: $0.00<br />Expenses: $10.59</div>
+</div>
+<div class='comment'>
+<div class='author'>JB</div>
+<div class='content'>
+Congrats on your first release! Will you give any updates on how monetization of old projects is going as you work on new ones?</div>
+</div>
+</div>

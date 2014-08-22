@@ -1,0 +1,9 @@
+---
+layout: post
+title: "Intelligent Address Entry - Tuesday"
+date: 2010-08-10
+comments: false
+---
+
+<div class='post'>
+Yesterday I found that the zip code database isn't very accessible and the first hurdle was going to be just obtaining it. After some digging around I found that this data could be extracted via a 10 year old Census database, various private companies, from the USPS on a CD and also via a one-shot lookup tool on the USPS website. Not quite sure why they don't just make the entire database available in it's raw form. Regardless I wrote a small script to automate the data collection via the web form and parse the output. It took about 11 hours to extract all zip codes (55457 zip code and city pairs). I've provided a link to the list below as well as the quick scripts to extract and parse the data from the USPS website. The extraction script could run quite a bit faster by making the requests in parralel. I just didn't see a reason to hammer the USPS website and I wasn't in a rush.<br /><br /><a href="http://50proj-public.s3.amazonaws.com/zipcode/allzips.txt">Zip Code City pairs as of (2010-08-09)</a><br /><a href="http://50proj-public.s3.amazonaws.com/zipcode/collect.sh">Simple Shell Script using curl to connect to USPS site</a><br /><a href="http://50proj-public.s3.amazonaws.com/zipcode/parsezip_ext.pl">Simple Perl script to do quick regexes on the input</a> <br /><br />While that job was running I wrote another script to convert the output to JSON files. Then followed that by using jQuery to query the JSON files and treat the data like an autocomplete mechanism. I'll be finishing that up today hopefully. But I haven't touched javascript since early 2000 and jQuery is completely foreign to me. It's nice to see that these new APIs are available though. It's going to make the implementation phase smoother.</div>

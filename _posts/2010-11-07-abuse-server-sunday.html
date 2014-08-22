@@ -1,0 +1,9 @@
+---
+layout: post
+title: "Abuse Server - Sunday"
+date: 2010-11-07
+comments: false
+---
+
+<div class='post'>
+Yesterday I put the finishing touches on <a href="https://github.com/pcorliss/AbuseJet">AbuseJet</a> and committed them to github. This project went exceptionally well with only minor bumps and bruises along the way. Features just seemed to fall in to place where previously I was worried this particular project was going to require burning the midnight oil. Instead it was all tied up by yesterday afternoon. I left myself a day to write this blog post and upload a working build.xml.<br /><br />I'm particularly excited about a clever implementation of AbuseJet that would eliminate captchas except for bots and malicious users. For example a normal user would never see a captcha on your site while you use AbuseJet. But a malicious user or bot would create a few accounts using the same IP address and that would automatically trigger conditional captchas for all future data entry or user creations. Further abuse would trigger tarpitting and eventually blocking. Rendering that IP useless quickly. Meanwhile the built in reporting could be used to run a script to delete the content or optionally alert a human that spam is being created. <br /><br /><b>AbuseJet</b><br /><ul><li> Prevent DDOS attacks</li><li>Tarpit spam bots</li><li>Conditional captchas&nbsp;</li></ul><a href="https://github.com/pcorliss/AbuseJet">https://github.com/pcorliss/AbuseJet</a><br /><br /><br />I also fixed an issue with EchoServer. Seems I had uploaded the .class files instead of the .java files. You folks need to keep me more honest :-)<br /><br /><a href="https://github.com/pcorliss/Echo-Server">https://github.com/pcorliss/Echo-Server</a></div>
