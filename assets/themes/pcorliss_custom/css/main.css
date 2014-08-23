@@ -102,6 +102,24 @@ body {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+a {
+  color: #428bca;
+  text-decoration: none;
+  background: 0 0;
+}
+
+a:active, a:hover {
+  color: #2a6496;
+  text-decoration: underline;
+  outline: 0;
+}
+
+a:visited {
+  color: #428bca;
+  text-decoration: none;
+  background: 0 0;
+}
+
 code {
 white-space: nowrap;
 margin: 0 2px;
