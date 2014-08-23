@@ -104,13 +104,11 @@ body {
 
 code {
 white-space: nowrap;
-
 margin: 0 2px;
 padding: 0px 5px;
 border: 1px solid #eaeaea;
 background-color: #f8f8f8;
 border-radius: 3px;
-
 }
 
 pre>code {
@@ -143,6 +141,11 @@ header .banner {
   height: 100%;
   margin: 0px;
   padding: 0px;
+}
+
+.pagination {
+  margin-top: 40px;
+  font-size: 1.25em;
 }
 
 header .banner img {

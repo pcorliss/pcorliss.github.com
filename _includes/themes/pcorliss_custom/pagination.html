@@ -1,11 +1,9 @@
 <div class="pagination">
-  <ul>
-  {% if page.previous %}
-    <li class="prev"><a href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">Prev: {{ page.previous.title }}</a></li>
-  {% endif %}
-    <li><a href="{{ BASE_PATH }}{{ site.JB.archive_path }}">Archive</a></li>
   {% if page.next %}
-    <li class="next"><a href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">Next: {{ page.next.title}}</a></li>
+    <a class="next" href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">Read Next: {{ page.next.title}}</a></li>
+  {% else %}
+    {% if page.previous %}
+      <a class="prev" href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">Read Next: {{ page.previous.title }}</a>
+    {% endif %}
   {% endif %}
-  </ul>
 </div>
