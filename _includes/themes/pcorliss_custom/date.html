@@ -1,5 +1,5 @@
 <p>
-  <time pubdate>
+  <time pubdate datetime="{{page.date}}">
     {% assign d = page.date | date: "%-d"  %}
     {{ page.date | date: "%B" }}
     {% case d %}
@@ -7,5 +7,5 @@
       {{ page.date | date: "%Y" }}
   </time>
   &mdash;
-  {{ site.author.name }}
+  <span class="vcard author post-author">{{ site.author.name }}</span>
 </p>
