@@ -49,11 +49,11 @@ Thankfully when you're making something for yourself or only a handful of others
   animation:spin 4s linear infinite;
 }
 
-.paused{
+.paused {
   -webkit-animation-play-state:paused;
   -moz-animation-play-state:paused;
   animation-play-state:paused;
-  }
+}
 ```
 
 ## Code & Link
