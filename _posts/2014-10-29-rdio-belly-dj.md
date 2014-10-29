@@ -10,7 +10,7 @@ comments: false
 
 ### TLDR: [belly-dj.herokuapp.com](http://belly-dj.herokuapp.com/)
 
-I started looking for full-time work recently and a co-worker of mine mentioned [Belly](https://tech.bellycard.com/join/).
+I started looking for full-time work recently and an old co-worker of mine mentioned [Belly](https://tech.bellycard.com/join/).
 When I took a peek at their engineering page I was particularly excited by the [front-end JS challenge](https://tech.bellycard.com/join/#javascript-audio-player) they had posted.
 
 The basic gist is [Belly](https://tech.bellycard.com/join/) provides a wrapper around the [Rdio API](http://www.rdio.com/developers/docs/web-service/index/).
