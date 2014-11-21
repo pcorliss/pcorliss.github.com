@@ -84,7 +84,7 @@ runcmd:
  - "yum update -y"
  - "yum install docker -y"
  - "/etc/init.d/docker start"
- - "docker run -d -e SETTINGS_FLAVOR=s3 -e AWS_BUCKET=[YOUR_S3_BUCKET] -e STORAGE_PATH=/registry -e AWS_KEY=[YOUR_AWS_KEY] -e AWS_SECRET=[YOUR_AWS_SECRET] -e SEARCH_BACKEND=sqlalchemy -e STORAGE_REDIRECT=true -p '80:5000' registry"
+ - "docker run -d -e SETTINGS_FLAVOR=s3 -e AWS_BUCKET=[YOUR_S3_BUCKET] -e STORAGE_PATH=/registry -e AWS_KEY=[YOUR_AWS_KEY] -e AWS_SECRET=[YOUR_AWS_SECRET] -e STORAGE_REDIRECT=true -p '80:5000' registry"
  - "echo 'Done Setting up Docker'"
 ```
 
