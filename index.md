@@ -6,6 +6,7 @@ tagline:
 
 Top Posts
 =========
+* [Recovering Git Commits](/2014/12/recovering-git-commits.html)
 * [Rdio & Belly DJ](/2014/10/rdio-belly-dj.html)
 * [Bringing the Orchestra Screen to Tech](/2014/10/bringing-the-orchestra-screen-to-tech.html)
 * [Tool to Generate S3 Expiring Links](/2014/08/tool-to-generate-s3-expiring-links.html)
