@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Acing the Technical Interview"
+title: "Technical Interviews"
 description: ""
 category: 
 tags: []
@@ -8,7 +8,7 @@ comments: false
 ---
 {% include JB/setup %}
 
-... Intro ...
+It wasn't until I sat in the interviewer's seat multiple times that I finally got a grasp on technical interviews, both giving them and participating in them. Up until that point they felt like a mystery where I would be expected to regurgitate precise knowledge on demand and perform feats of lateral thinking while I solve puzzles.
 
 ## Disclaimer
 
@@ -23,7 +23,10 @@ Ideally you're reaching out to multiple companies as part of your job search. Sc
 
 ## General Strategies
 
-Communication
+### Communication
+
+Interviewers are looking for people that they'll need to work with on a team. One of the indicators they use is how much the candidate communicated during the interview. This is a problematic measure as the interview induces a ton of stress.
+
 Whiteboard
 Assumptions
 I don't know vs. I'm not sure but if I had to guess
@@ -47,6 +50,7 @@ These are my own personal nightmare. With experience I've gotten good at giving 
 Before we dive in I want to speak a bit on the issue of fairness. Ideally all interviewers are professionals and interested in your success in the process as much as you are. This is not always the case. The interview process is weighted entirely on the side of the interviewer. Leaving the candidate with very little power in the equation. Even as a senior candidate in my last job search I had little power to dictate anything about the process. My best advice is to roll with it as best you can, keep your cool, and do the best you can.
 
 ### Examples
+
 * A complete jerk
 * Checking their email, texts, stepping out to take a call
 * Hasn't read your resume
