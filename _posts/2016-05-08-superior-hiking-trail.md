@@ -8,7 +8,7 @@ comments: false
 ---
 {% include JB/setup %}
 
-[<img align="right" alt="Ascending Rock Pass, Pacific Crest Trail, Pasayten Wilderness by andy porter (cc by-nc 2.0)" src="https://farm9.staticflickr.com/8284/7718097420_a996fec69d_n.jpg">](https://flic.kr/p/cl2gtb)
+[<img align="right" alt="Ascending Rock Pass, Pacific Crest Trail, Pasayten Wilderness by andy porter (cc by-nc 2.0)" src="https://farm9.staticflickr.com/8284/7718097420_a996fec69d_n.jpg">](https://www.flickr.com/photos/northwesternimages/7718097420)
 
 A few months ago I was captivated by a reddit IAMA [Last year I quit my job in order to walk the 2650 mile PCT](https://www.reddit.com/r/videos/comments/48rv22/last_year_i_quit_my_job_in_order_to_walk_the_2650/)
 

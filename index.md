@@ -19,6 +19,6 @@ Top Posts
 * [Ruby String XOR Optimizations](/2010/12/ruby-string-xor-optimizations.html)
 
 <span class="archive">
-  <a class="archive" href="{{ BASE_PATH }}{{ site.JB.archive_path }}">Archive</a></li>
+  <a class="archive" href="{{ BASE_PATH }}{{ site.JB.archive_path }}">Archive</a>
 </span>
 
