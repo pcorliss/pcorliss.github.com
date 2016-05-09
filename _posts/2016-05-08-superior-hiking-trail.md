@@ -18,7 +18,7 @@ The idea of travel makes me anxious: too many people, being unable to speak the 
 
 * I like my job, and don’t feel too keen on leaving.
 * I don’t think I’m quite up to the task of spending 4 months backpacking without a test run.
-* All of my gear is from my time in the Boy Scouts. Sized for an adolescent. And about 19 years old.
+* All of my gear is from my time in the Boy Scouts, sized for an adolescent, and about 19 years old.
 * What if nostalgia is clouding my memory of backpacking?
 
 [<img align="left" style="margin-right: 10px" alt="Section 13, Superior Hiking Trail by NatureNerd (CC BY-NC 2.0)" src="https://farm3.staticflickr.com/2948/15497882482_48570acf27_n.jpg">](https://flic.kr/p/pBuGwo)
@@ -37,4 +37,4 @@ Enter the [16,100 mAh AmazonBasics Portable Power Bank](http://www.amazon.com/Am
 
 It managed to fully recharge my iPhone from a normal day’s usage (50%) 8 times. With low-power and airplane-mode I’m certain I can stretch that to two full weeks. At 12.6 oz it’s heavy but well worth the piece of mind.
 
-I’ll be posting more periodic updates as I acquire and test new gear out. Get my inventory together and firm up my plans.
+I’ll be posting periodic updates as I acquire and test new gear, Get my inventory together and firm up my plans.
