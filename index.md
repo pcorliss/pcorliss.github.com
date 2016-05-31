@@ -21,4 +21,11 @@ Top Posts
 <span class="archive">
   <a class="archive" href="{{ BASE_PATH }}{{ site.JB.archive_path }}">Archive</a>
 </span>
-
+|
+<span class="categories">
+  <a class="categories" href="{{ BASE_PATH }}{{ site.JB.categories_path }}">Categories</a>
+</span>
+|
+<span class="tagss">
+  <a class="tags" href="{{ BASE_PATH }}{{ site.JB.tags_path }}">Tags</a>
+</span>

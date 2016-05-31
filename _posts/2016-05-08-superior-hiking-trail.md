@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "The Superior Hiking Trail"
+title: "The Superior Hiking Trail - Intro & Gear"
 description: ""
-category: 
-tags: []
+category: Hiking
+tags: [hiking,battery,gear]
 comments: false
 ---
 {% include JB/setup %}
