@@ -32,12 +32,12 @@ Clearly something is wrong here, I started double checking assumptions.
 
 When I run `netstat -an | grep ':5432'` to see open PostgreSQL connections I see about 90% of requests stuck to one of the readers. A handful of our web workers are connected to the other readers. This seems to make sense because sometimes a web worker will timeout and automatically get restarted. This seems to force a fresh connection. We see the same behavior during a deploy or manual restart of our web workers.
 
-We currently monkey-patch the ActiveRecord [PostgreSQLAdapter#active?](https://github.com/rails/rails/blob/bc2f390f7d2a96030532f41c08205f159e05af10/activerecord/lib/active_record/connection_adapters/postgresql_adapter.rb#L273-L280) to expire our connections periodically to help with failover events.
+We currently monkey-patch the [PostgreSQLAdapter#active?](https://github.com/rails/rails/blob/bc2f390f7d2a96030532f41c08205f159e05af10/activerecord/lib/active_record/connection_adapters/postgresql_adapter.rb#L273-L280) method to expire our connections periodically to help with failover events.
 A naive read of it indicated that it should force a reconnection every few minutes or so and that was indeed working. Further digging discovered that it was resetting the initial PG::Connection object in the connection pool rather than reaping the connection and creating a fresh one. Lastly the [PG::Connection#reset](https://github.com/ged/ruby-pg/blob/382536b03dfea39be6d525603f5b189019ccd315/lib/pg/connection.rb#L527-L531) method doesn't force DNS to resolve again. Ooof!
 
 ## How ActiveRecord Connections Work
 
-On the first ActiveRecord request, something like `User.first`, a new connection is checked out or created from the connection pool. On checkout the connection is verified. Even in single threaded workloads like Unicorn a pool is maintained, although with typically only a single connection.
+On the first ActiveRecord request, something like `User.first`, a new connection is checked out or created from the connection pool. On checkout the connection is verified. Even in single threaded workloads, like Unicorn, a pool is maintained, although with typically only a single connection.
 
 Below are the relevant code snippets from the [Rails 6.1 branch of ActiveRecord](https://github.com/rails/rails/tree/6-1-stable/activerecord/lib/active_record).
 
