@@ -6,6 +6,7 @@ tagline:
 
 Top Posts
 =========
+* [Fixing Rails Connection Stickiness to Aurora](/2023/04/fixing-rails-stickiness.html)
 * [Recovering Git Commits](/2014/12/recovering-git-commits.html)
 * [Rdio & Belly DJ](/2014/10/rdio-belly-dj.html)
 * [Bringing the Orchestra Screen to Tech](/2014/10/bringing-the-orchestra-screen-to-tech.html)
