@@ -44,7 +44,6 @@ A naive read of it indicated that it should force a reconnection every few minut
   sandbox="allow-scripts allow-same-origin">
 </iframe>
 
-
 ```ruby
 def foo
   puts "bar"
@@ -52,6 +51,12 @@ end
 ```
 
 {% highlight ruby %}
+def foo
+  puts 'foo'
+end
+{% endhighlight %}
+
+{% highlight ruby linenos %}
 def foo
   puts 'foo'
 end
