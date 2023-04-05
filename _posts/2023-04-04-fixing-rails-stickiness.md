@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Fixing Rails Connection Stickiness to AWS Aurora"
+title: "Fixing Rails Connection Stickiness to Aurora"
 description: ""
 category: Technical
 tags: [dns,aws,rds,aurora,ruby,rails,postgresql,load balancing]
