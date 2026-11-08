@@ -1,9 +1,8 @@
-<div class="pagination">
-  {% if page.next %}
-    <a class="next" href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">Read Next: {{ page.next.title}}</a></li>
-  {% else %}
-    {% if page.previous %}
-      <a class="prev" href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">Read Next: {{ page.previous.title }}</a>
-    {% endif %}
+<nav class="pagination" aria-label="Post navigation">
+  {% if page.previous %}
+    <a class="prev" href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title | escape }}">&larr; Previous: {{ page.previous.title }}</a>
   {% endif %}
-</div>
+  {% if page.next %}
+    <a class="next" href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title | escape }}">Next: {{ page.next.title }} &rarr;</a>
+  {% endif %}
+</nav>
