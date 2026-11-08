@@ -2,7 +2,7 @@
 # For more see: http://jekyllrb.com/docs/permalinks/
 permalink: /:year/:month/:title.html
 
-exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "History.markdown", "Gemfile", "Gemfile.lock", "vendor", "tools", "assets/themes/pcorliss_custom/fonts/LICENSE"]
+exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "History.markdown", "Gemfile", "Gemfile.lock", "vendor", "tools"]
 markdown: kramdown
 #rdiscount:
   #extensions:
