@@ -5,6 +5,11 @@
     <title>{% if page.url == "/" or page.url == nil %}{{ site.title }}{% else %}{{ page.title }} &middot; {{ site.title }}{% endif %}</title>
     {% capture page_title %}{% if page.url == "/" or page.url == nil %}{{ site.title }}{% else %}{{ page.title }}{% endif %}{% endcapture %}
     {% capture page_description %}{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}{% endcapture %}
+    {% comment %}A post may name its own social-preview image in front matter:{% endcomment %}
+    {% comment %}  image: /images/og/thing.jpg   (root-relative, or a full https:// url){% endcomment %}
+    {% comment %}  image_alt: "One line describing the picture"{% endcomment %}
+    {% capture page_image %}{% if page.image contains '://' %}{{ page.image }}{% elsif page.image %}{{ site.production_url }}{{ page.image }}{% else %}{{ site.production_url }}{{ ASSET_PATH }}/img/background.jpg{% endif %}{% endcapture %}
+    {% capture page_image_alt %}{% if page.image_alt %}{{ page.image_alt }}{% else %}{{ page_title }}{% endif %}{% endcapture %}
     <meta name="description" content="{{ page_description | strip_newlines | escape }}">
     <meta name="author" content="{{ site.author.name }}">
 
@@ -19,8 +24,11 @@
     <meta property="og:title" content="{{ page_title | strip_newlines | escape }}">
     <meta property="og:description" content="{{ page_description | strip_newlines | escape }}">
     <meta property="og:url" content="{{ site.production_url }}{{ page.url }}">
-    <meta property="og:image" content="{{ site.production_url }}{{ ASSET_PATH }}/img/background.jpg">
-    <meta name="twitter:card" content="{% if page.layout == 'post' %}summary{% else %}summary_large_image{% endif %}">
+    <meta property="og:image" content="{{ page_image }}">
+    <meta property="og:image:alt" content="{{ page_image_alt | strip_newlines | escape }}">
+    <meta name="twitter:image" content="{{ page_image }}">
+    <meta name="twitter:image:alt" content="{{ page_image_alt | strip_newlines | escape }}">
+    <meta name="twitter:card" content="{% if page.layout == 'post' and page.image == nil %}summary{% else %}summary_large_image{% endif %}">
     {% if site.author.twitter %}<meta name="twitter:site" content="@{{ site.author.twitter }}">{% endif %}
 
     <!-- Fonts are served from /assets so there is nothing to preconnect to. -->

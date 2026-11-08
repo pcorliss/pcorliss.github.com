@@ -1,7 +1,9 @@
 ---
 layout: post
 title: "A Local LLM Beats Facebook but not the Kobayashi Maru"
-description: ""
+description: "Two to three hours, most of it unmonitored, was enough for a local LLM to resurrect a dead browser game. But it couldn't brute-force its way to victory."
+image: /images/KobayashiMaruWinSocial.png
+image_alt: "The Kobayashi Maru ending screen"
 category: Technical
 tags: [llm, local-llm, kobayashi-maru, snake-game]
 ---
