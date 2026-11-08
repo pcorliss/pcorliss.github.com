@@ -9,16 +9,15 @@ tags: [TODO]
 
 The story starts last year. I wanted to explore building a personal assistant. I had been experimenting with the LLama models and thought that with the right hardware I might be able to get a basic persoanl assistant running. At the time this turned out to be wildly ambitious. The models I could run on the Nvidia 5060 Ti card I purchased weren't able to follow instructions or respond fast enough to be usable, even as a basic coding assistant. I ended up using the machine to stream Satisfactory to my Steam Deck more than anything else.
 
-Fast-forward to October of 2026 and I start hearing interesting things about [Strata](https://github.com/niko1221/strata). Within about an hour I had `qwen3.8-flash-next-iq3_s` running at about 50 tokens/s. I connected up [pi](TODO link to Pi) and had it build [a snake game](TODO link to snake game in GitHub). Without any extra prompting it had a working first pass, a second passed fixed the music and sound effects. A very impressive first start.
+Fast-forward to October of 2026 and I start hearing interesting things about [Strata](https://github.com/niko1221/strata). Within about an hour I had `qwen3.8-flash-next-iq3_s` running at about 50 tokens/s. I connected up [pi](https://pi.dev/) and had it build [a snake game](https://github.com/pcorliss/snake-terminal-experiment). Without any extra prompting it had a working first pass, a second passed fixed the music and sound effects. A very impressive first start.
 
 ![Strata](/images/Strata.png)
-
 ![Snake game title](/images/SnakeGame2.png)
 ![Snake game demo](/images/SnakeGame1.png)
 
 ## Kobayashi Maru
 
-I took a look through my `~/git` directory for half-finished projects and found the archive of the [Kobayashi Maru Game]() I pulled from the [Wayback Machine](). Back in 2021 I had played this online web based game, figured out the path to beat it, and won a lifetime subscription to [Paramount+](). The Facebook integration broke after about a year, and the DNS stopped resolving around 2025. I made a half-hearted attempt to get the archive and remove the Facebook integration, but the obfuscated JS was too much for me to overcome.
+I took a look through my `~/git` directory for half-finished projects and found the archive of the [Kobayashi Maru Game](https://www.startrek.com/news/the-kobayashi-maru-hits-the-web) I pulled from the [Wayback Machine](https://web.archive.org/web/20260000000000*/kobayashimaru.com). Back in 2021 I had played this online web based game, figured out the path to beat it, and won a lifetime subscription to [Paramount+](https://www.paramountplus.com/). The Facebook integration broke after about a year, and the DNS stopped resolving around 2025. I made a half-hearted attempt to get the archive and remove the Facebook integration, but the obfuscated JS was too much for me to overcome.
 
 Reading about others successfully using LLMs to port/emultate games made me think this would be a good opportunity to see how far I could get. With a single prompt we were off, after a short period of time it had deobfuscated the JS, analyzed it, and written some scripts to rewrite the links and build an offline version. With some more time it had built a shim for Facebook login. It also decided that there were bugs in various places and it would helpfully "fix" them by adding additional shims. At this point it needed to be paused as it started winding down unasked for features.
 
@@ -26,7 +25,7 @@ With a little direction and I had it on Github, [github.com/pcorliss/kobayashi_m
 
 Total time was about 2-3 hours, of which most was spent unmonitored.
 
-## Where it failed
+## Where the LLM failed
 
 The LLM/harness got hyper-fixated on building a full headless Chrome based testing framework. It tried to fix the failure counter that it classified as a bug in the original game. Which turned out to be a bad interpretatin of the code.
 
@@ -49,3 +48,7 @@ It would be an interesting experiment to see if a state of the art model from An
 - GPU: Nvidia RTX 5060 Ti 16GB
 - Drive: 1TB NVMe
 - Model: `qwen3.8-flash-next-iq3_s`
+
+## Play it
+
+Play the game at [blog.50projects.com/kobayashi_maru/](https://blog.50projects.com/kobayashi_maru/).
