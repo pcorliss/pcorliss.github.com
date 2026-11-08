@@ -65,10 +65,11 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-img, video, iframe, object, embed {
+img, video, object, embed {
   max-width: 100%;
   height: auto;
 }
+iframe { max-width: 100%; }
 img { border: 0; border-radius: var(--radius-sm); }
 iframe, object { border: 0; }
 
@@ -386,10 +387,43 @@ article h1 small {
   border: 1px solid var(--rule);
   box-shadow: var(--shadow-sm);
 }
-.tr-caption-container { margin: 1.4rem auto; text-align: center; }
+/* old posts embed Flash video via <object>/<embed>; the iframes that replaced
+   them need an aspect ratio, since iframes have no intrinsic one */
+#article-body iframe {
+  width: 100%;
+  max-width: 34rem;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: #10151a;
+}
+
+/* Blogger turned every image with a caption into a layout table. Undo the grid
+   styling that real data tables get, so these read as figures. */
+.tr-caption-container {
+  width: auto;
+  display: table;
+  margin: 1.6rem auto;
+  text-align: center;
+  border: 0;
+  background: none;
+}
+.tr-caption-container tr,
+.tr-caption-container td {
+  border: 0;
+  background: none;
+  padding: 0 .55rem;
+  vertical-align: top;
+}
+.tr-caption-container tbody tr:nth-child(even) { background: none; }
+.tr-caption-container img {
+  border: 1px solid var(--rule);
+  box-shadow: var(--shadow-sm);
+}
 .tr-caption {
   display: block;
-  margin-top: .45rem;
+  margin-top: .5rem;
   font-size: .86rem;
   color: var(--ink-mute);
   font-style: normal;
