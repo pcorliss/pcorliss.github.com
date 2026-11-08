@@ -3,7 +3,7 @@ layout: post
 title: "A Local LLM Beats Facebook but not the Kobayashi Maru"
 description: ""
 category: Technical
-tags: [TODO]
+tags: [llm, local-llm, kobayashi-maru, snake-game]
 ---
 {% include JB/setup %}
 
@@ -38,7 +38,7 @@ It would be an interesting experiment to see if a state of the art model from An
 ## Takeaways
 
 - This is the most impressed I've been so far with Local LLMs. With just 16GB of VRAM, 64 GB of RAM, and fast disk I was able to run a full fledged harness with thinking support.
-- In my day-job I work as a Platform Engineer at a trading company TODO insert linkedin link. I make use Claude Opus 5.5 heavily. It was interesting to step back to a weaker model. It makes me appreciate what the paid models offer and what I can get with local hardware.
+- In my day-job I work as a [Platform Engineer at a trading company](https://www.linkedin.com/in/philipcorliss). I make use Claude Opus 5.5 heavily. It was interesting to step back to a weaker model. It makes me appreciate what the paid models offer and what I can get with local hardware.
 - This local model doesn't compare to Opus 5.5, but it's better than what I was using a year ago and I'm hopeful that the Local LLM models continue to track less than a year behind the best in class available paid models.
 
 ## My LLM Machine Specs
