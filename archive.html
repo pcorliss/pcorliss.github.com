@@ -1,10 +1,24 @@
 ---
 layout: page
-title : Archive
-header : Post Archive
+title: Archive
+description: Every post on this site, newest first.
 group: navigation
+custom:
+  wide: true
 ---
 {% include JB/setup %}
 
-{% assign posts_collate = site.posts %}
-{% include JB/posts_collate %}
+{% for post in site.posts %}
+  {% assign year = post.date | date: "%Y" %}
+  {% if year != this_year %}
+    {% if this_year %}</ul>{% endif %}
+    <h2 class="year-head">{{ year }}</h2>
+    <ul class="link-list">
+    {% assign this_year = year %}
+  {% endif %}
+  <li>
+    <time class="date" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%b %-d" }}</time>
+    <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a>
+  </li>
+{% endfor %}
+</ul>

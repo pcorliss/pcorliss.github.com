@@ -1,32 +1,35 @@
 ---
 layout: page
-title: blog.50projects.com
-tagline:
+title: Home
+custom:
+  home: true
+  wide: true
 ---
+{% include JB/setup %}
 
-Top Posts
-=========
-* [Fixing Rails Connection Stickiness to Aurora](/2023/04/fixing-rails-stickiness.html)
-* [Recovering Git Commits](/2014/12/recovering-git-commits.html)
-* [Rdio & Belly DJ](/2014/10/rdio-belly-dj.html)
-* [Bringing the Orchestra Screen to Tech](/2014/10/bringing-the-orchestra-screen-to-tech.html)
-* [Tool to Generate S3 Expiring Links](/2014/08/tool-to-generate-s3-expiring-links.html)
-* [Build Your Own Private Docker Registry for $3/month](/2014/08/build-your-own-private-docker-registry.html)
-* [Memcached Doesn't Work the Way You Think It Does](/2014/02/memcached-doesnt-work-way-you-think-it.html)
-* [Fitbit Data and Weightloss](/2014/01/fitbit-data-and-weightloss.html)
-* [Law & Order](/2014/01/law-order.html)
-* [Stripe CTF](/2012/02/stripe-ctf.html)
-* [Lightning Talk - Geekfest](/2011/08/lightning-talk-geekfest.html)
-* [Ruby String XOR Optimizations](/2010/12/ruby-string-xor-optimizations.html)
+<section class="post-feed" aria-label="Latest posts">
+  <h2 class="section-title">Recent posts</h2>
 
-<span class="archive">
-  <a class="archive" href="{{ BASE_PATH }}{{ site.JB.archive_path }}">Archive</a>
-</span>
-|
-<span class="categories">
-  <a class="categories" href="{{ BASE_PATH }}{{ site.JB.categories_path }}">Categories</a>
-</span>
-|
-<span class="tagss">
-  <a class="tags" href="{{ BASE_PATH }}{{ site.JB.tags_path }}">Tags</a>
-</span>
+  <ul class="card-grid">
+    {% for post in site.posts limit:9 %}
+      <li class="card">
+        <a href="{{ BASE_PATH }}{{ post.url }}" class="card-link">
+          <h3>{{ post.title }}</h3>
+          <p class="card-meta">
+            <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%b %-d, %Y' }}</time>
+            {%- if post.tags.size > 0 %}
+              <span class="dot">·</span> {{ post.tags | size }} tags
+            {%- endif %}
+          </p>
+          <p class="card-excerpt">{{ post.content | strip_html | truncatewords: 22 }}</p>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <p class="browse">
+    <a class="btn primary" href="{{ BASE_PATH }}{{ site.JB.archive_path }}">The whole archive</a>
+    <a class="btn ghost" href="{{ BASE_PATH }}{{ site.JB.tags_path }}">Browse by tag</a>
+    <a class="btn ghost" href="{{ BASE_PATH }}{{ site.JB.categories_path }}">Browse by category</a>
+  </p>
+</section>

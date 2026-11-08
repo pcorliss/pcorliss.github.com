@@ -2,7 +2,7 @@
 # For more see: http://jekyllrb.com/docs/permalinks/
 permalink: /:year/:month/:title.html
 
-exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "History.markdown", "Gemfile", "Gemfile.lock", "vendor"]
+exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "History.markdown", "Gemfile", "Gemfile.lock", "vendor", "tools", "assets/themes/pcorliss_custom/fonts/LICENSE"]
 markdown: kramdown
 #rdiscount:
   #extensions:
@@ -91,7 +91,9 @@ JB :
   # Set 'provider' to false to turn commenting off globally.
   #
   comments :
-    provider : disqus
+    # No Disqus account is configured for this site, so leave the helper off
+    # globally rather than shipping the Jekyll-Bootstrap demo short name.
+    provider : false
     disqus :
       short_name : jekyllbootstrap
     livefyre :

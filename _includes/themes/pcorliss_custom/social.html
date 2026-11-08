@@ -1,45 +1,33 @@
-<div class="social">
+{% comment %}
+  Profile links. Icon-only, so each link carries an accessible name and the
+  glyph itself is hidden from assistive tech.
+{% endcomment %}
+<nav class="social" aria-label="Elsewhere on the web">
   {% if site.author.twitter %}
-    <span class="fa-stack fa">
-      <a href="https://twitter.com/{{ site.author.twitter }}">
-        <i class="fa fa-fw fa-circle fa-stack-2x"></i>
-        <i class="fa fa-fw fa-twitter fa-stack-1x fa-inverse"></i>
-      </a>
-    </span>
+    <a href="https://twitter.com/{{ site.author.twitter }}" rel="me" title="Twitter">
+      <i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span class="label">Twitter</span>
+    </a>
   {% endif %}
 
   {% if site.author.github %}
-    <span class="fa-stack fa">
-      <a href="https://github.com/{{ site.author.github }}">
-        <i class="fa fa-fw fa-circle fa-stack-2x"></i>
-        <i class="fa fa-fw fa-git fa-stack-1x fa-inverse"></i>
-      </a>
-    </span>
+    <a href="https://github.com/{{ site.author.github }}" rel="me" title="GitHub">
+      <i class="fa fa-fw fa-git-square" aria-hidden="true"></i><span class="label">GitHub</span>
+    </a>
   {% endif %}
 
   {% if site.author.linkedin %}
-    <span class="fa-stack fa">
-      <a href="https://www.linkedin.com/in/{{ site.author.linkedin }}">
-        <i class="fa fa-fw fa-circle fa-stack-2x"></i>
-        <i class="fa fa-fw fa-linkedin fa-stack-1x fa-inverse"></i>
-      </a>
-    </span>
+    <a href="https://www.linkedin.com/in/{{ site.author.linkedin }}" rel="me" title="LinkedIn">
+      <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i><span class="label">LinkedIn</span>
+    </a>
   {% endif %}
 
   {% if site.author.email %}
-    <span class="fa-stack fa">
-      <a href="mailto:{{ site.author.email }}">
-        <i class="fa fa-fw fa-circle fa-stack-2x"></i>
-        <i class="fa fa-fw fa-envelope fa-stack-1x fa-inverse"></i>
-      </a>
-    </span>
+    <a href="mailto:{{ site.author.email }}" title="Email">
+      <i class="fa fa-fw fa-envelope" aria-hidden="true"></i><span class="label">Email</span>
+    </a>
   {% endif %}
 
-    <span class="fa-stack fa">
-      <a href="/atom.xml">
-        <i class="fa fa-fw fa-circle fa-stack-2x"></i>
-        <i class="fa fa-fw fa-rss fa-stack-1x fa-inverse"></i>
-      </a>
-    </span>
-</div>
-
+  <a href="{{ BASE_PATH }}{{ site.JB.atom_path }}" type="application/atom+xml" title="Atom feed">
+    <i class="fa fa-fw fa-rss" aria-hidden="true"></i><span class="label">Atom feed</span>
+  </a>
+</nav>

@@ -1,22 +1,29 @@
 ---
 layout: page
 title: Tags
-header: Posts By Tag
+description: Posts grouped by the labels they carry.
 group: navigation
+custom:
+  wide: true
 ---
 {% include JB/setup %}
 
-<!--
-<ul class="tag_box inline">
-  {% assign tags_list = site.tags %}  
-  {% include JB/tags_list %}
-</ul>
--->
+{% assign tag_list = site.tags | sort %}
 
-{% for tag in site.tags %} 
-  <h2 id="{{ tag[0] }}-ref">{{ tag[0] }}</h2>
-  <ul>
-    {% assign pages_list = tag[1] %}  
-    {% include JB/pages_list %}
+<ul class="tag_box tag-index" aria-label="All tags">
+  {% for tag in tag_list %}
+    <li><a href="#{{ tag[0] | slugify }}-ref">{{ tag[0] }} <span class="chip-count">{{ tag[1] | size }}</span></a></li>
+  {% endfor %}
+</ul>
+
+{% for tag in tag_list %}
+  <h2 id="{{ tag[0] | slugify }}-ref">{{ tag[0] }} <span class="chip-count">{{ tag[1] | size }}</span></h2>
+  <ul class="link-list">
+    {% for post in tag[1] %}
+      <li>
+        <time class="date" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+        <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a>
+      </li>
+    {% endfor %}
   </ul>
 {% endfor %}

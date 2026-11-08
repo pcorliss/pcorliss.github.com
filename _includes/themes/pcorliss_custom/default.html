@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>{% if page.url == "/" or page.url == nil %}{{ site.title }}{% else %}{{ page.title }} &middot; {{ site.title }}{% endif %}</title>
+    {% capture page_title %}{% if page.url == "/" or page.url == nil %}{{ site.title }}{% else %}{{ page.title }}{% endif %}{% endcapture %}
     {% capture page_description %}{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}{% endcapture %}
     <meta name="description" content="{{ page_description | strip_newlines | escape }}">
     <meta name="author" content="{{ site.author.name }}">
@@ -15,20 +16,17 @@
     <!-- Open Graph / Twitter -->
     <meta property="og:site_name" content="{{ site.title }}">
     <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
-    <meta property="og:title" content="{{ page.title }}">
+    <meta property="og:title" content="{{ page_title | strip_newlines | escape }}">
     <meta property="og:description" content="{{ page_description | strip_newlines | escape }}">
     <meta property="og:url" content="{{ site.production_url }}{{ page.url }}">
     <meta property="og:image" content="{{ site.production_url }}{{ ASSET_PATH }}/img/background.jpg">
     <meta name="twitter:card" content="{% if page.layout == 'post' %}summary{% else %}summary_large_image{% endif %}">
     <meta name="twitter:site" content="@{{ site.author.twitter }}">
 
-    <!-- Le styles -->
-    <link rel="stylesheet" href="{{ ASSET_PATH }}/css/normalize.css">
-    <link rel="stylesheet" href="{{ ASSET_PATH }}/css/main.css">
-    <link rel="stylesheet" href="{{ ASSET_PATH }}/css/animate.min.css">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-
-    <link href="{{ ASSET_PATH }}/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+    <!-- Fonts are served from /assets so there is nothing to preconnect to. -->
+    <link rel="stylesheet" href="{{ ASSET_PATH }}/css/fonts.css">
+    <link rel="stylesheet" href="{{ ASSET_PATH }}/css/site.css?body=1">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="icon" href="{{ ASSET_PATH }}/img/leaf_25691f_32.png" sizes="32x32">
@@ -41,33 +39,79 @@
     <link rel="canonical" href="{{ site.production_url }}{{ page.url }}">
   </head>
 
-  <body>
+  <body class="{% if page.custom.home %}home{% endif %}{% if page.layout == 'post' %} post-page{% endif %}">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
     <div id="container" class="container">
-      <header role="banner">
+      <header role="banner" id="hero" class="hero">
         <div class="banner">
-            <img src="{{ ASSET_PATH }}/img/background.jpg">
+          <img src="{{ ASSET_PATH }}/img/background.jpg" alt="" aria-hidden="true">
         </div>
-        <div class="darken"></div>
-        <div class="hero">
-          <a href="{{ HOME_PATH }}">
-            <img src="{{ site.author.avatar }}" class="avatar">
-          </a>
-          <h1><a href="{{ HOME_PATH }}">{{ site.title }}</a></h1>
-          <h2><a href="{{ HOME_PATH }}">{{ site.tagline }}</a></h2>
-          {% include themes/pcorliss_custom/social.html %}
-        </div>
+        <div class="darken" aria-hidden="true"></div>
+
+        {% if page.layout == 'post' %}
+          {% comment %}A post is the story, so the story's title leads.{% endcomment %}
+          <div class="hero-inner">
+            <p class="kicker"><a href="{{ HOME_PATH }}">{{ site.title }}</a></p>
+            <h1>{{ page.title }}</h1>
+            <p class="tagline post-meta">{% include themes/pcorliss_custom/post_meta.html %}</p>
+          </div>
+
+        {% elsif page.custom.header %}
+          {% comment %}A page may name its own hero copy in its meta-data.{% endcomment %}
+          <div class="hero-inner">
+            <h1>{{ page.custom.header.title }}</h1>
+            {% if page.custom.header.tagline %}
+              <p class="tagline">{{ page.custom.header.tagline | newline_to_br }}</p>
+            {% endif %}
+          </div>
+
+        {% elsif page.custom.home %}
+          {% comment %}The front page carries the site identity.{% endcomment %}
+          <div class="hero-inner">
+            <a href="{{ HOME_PATH }}" class="avatar-link" rel="home">
+              <img src="{{ site.author.avatar }}" class="avatar" alt="{{ site.author.name }}">
+            </a>
+            <h1><a href="{{ HOME_PATH }}" rel="home">{{ site.title }}</a></h1>
+            {% if site.tagline %}<p class="tagline">{{ site.tagline }}</p>{% endif %}
+            <div class="hero-actions">
+              <a class="btn primary" href="#main-content">Start reading</a>
+              <a class="btn ghost" href="{{ BASE_PATH }}{{ site.JB.archive_path }}">Archive</a>
+              <a class="btn ghost" href="{{ BASE_PATH }}{{ site.JB.atom_path }}">Subscribe</a>
+            </div>
+            {% include themes/pcorliss_custom/social.html %}
+          </div>
+
+        {% else %}
+          <div class="hero-inner">
+            <h1>{{ page.title }}</h1>
+            {% if page.description %}<p class="tagline">{{ page.description }}</p>{% endif %}
+            <div class="hero-actions">
+              <a class="btn ghost" href="{{ HOME_PATH }}">Home</a>
+            </div>
+          </div>
+        {% endif %}
       </header>
 
-      <div id="main-content" role="main">
-        <div id="article-body">
+      <div id="main-content" class="content" role="main">
+        <div id="article-body"{% if page.custom.wide %} class="wide"{% endif %}>
           {{ content }}
         </div>
       </div>
 
       <footer id="page-footer">
-        {% include themes/pcorliss_custom/social.html %}
+        <nav class="footer-nav" aria-label="Site">
+          <a href="{{ HOME_PATH }}">Home</a>
+          <a href="{{ BASE_PATH }}{{ site.JB.archive_path }}">Archive</a>
+          <a href="{{ BASE_PATH }}{{ site.JB.categories_path }}">Categories</a>
+          <a href="{{ BASE_PATH }}{{ site.JB.tags_path }}">Tags</a>
+          <a href="{{ BASE_PATH }}{{ site.JB.atom_path }}">Feed</a>
+        </nav>
+        {% if page.custom.home == nil %}
+          {% include themes/pcorliss_custom/social.html %}
+        {% endif %}
         <p>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}</p>
-        <small>Cover Image by By <a href="http://www.cocopine.co.za/">Glen Carrie</a></small>
+        <small>Cover image by <a href="https://www.cocopine.co.za/">Glen Carrie</a></small>
       </footer>
     </div>
 

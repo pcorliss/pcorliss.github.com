@@ -1,0 +1,9 @@
+{% if page.tags.size > 0 %}
+  <ul class="tag_box post-tags" aria-label="Tags">
+    {% for tag in page.tags %}
+      <li>
+        <a href="{{ BASE_PATH }}{{ site.JB.tags_path }}#{{ tag | slugify }}-ref" rel="tag">{{ tag }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}

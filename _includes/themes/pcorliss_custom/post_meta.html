@@ -1,0 +1,14 @@
+{%- comment -%}
+  One line of post furniture: when it was written, who wrote it, how long the
+  read is. Anything not set in the post's meta-data is simply left out.
+{%- endcomment -%}
+{%- assign words = page.content | strip_html | number_of_words -%}
+{%- assign minutes = words | divided_by: 200 -%}
+{%- if minutes < 1 -%}{%- assign minutes = 1 -%}{%- endif -%}
+{%- if page.date -%}
+  <time datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+{%- endif -%}
+<span class="dot">·</span>
+<span class="p-author">{{ site.author.name }}</span>
+<span class="dot">·</span>
+<span title="{{ words }} words">{{ minutes }}&nbsp;min read</span>

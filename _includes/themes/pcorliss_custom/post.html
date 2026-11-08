@@ -1,12 +1,8 @@
-<article>
-  <header>
-    <h1>{{ page.title }} {% if page.tagline %}<small>{{page.tagline}}</small>{% endif %}</h1>
-  </header>
-
+<article class="post">
   {{ content }}
 
   <footer class="article-footer">
-    {% include themes/pcorliss_custom/date.html %}
+    {% include themes/pcorliss_custom/post_tags.html %}
     {% include themes/pcorliss_custom/pagination.html %}
   </footer>
 </article>

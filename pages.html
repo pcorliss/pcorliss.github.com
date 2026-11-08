@@ -1,13 +1,23 @@
 ---
 layout: page
-title: Pages 
-header: Pages
+title: Pages
+description: Everything else on this site.
 group: navigation
 ---
 {% include JB/setup %}
 
-<h2>All Pages</h2>
-<ul>
-{% assign pages_list = site.pages %}
-{% include JB/pages_list %}
+<ul class="link-list site-map">
+  {% for p in site.pages %}
+    {% if p.title and p.group == "navigation" %}
+      <li>
+        <a href="{{ BASE_PATH }}{{ p.url }}">{{ p.title }}</a>
+        {% if p.description %}<span class="card-excerpt">{{ p.description }}</span>{% endif %}
+      </li>
+    {% endif %}
+  {% endfor %}
 </ul>
+
+<p class="browse">
+  <a class="btn ghost" href="{{ BASE_PATH }}{{ site.JB.archive_path }}">Archive</a>
+  <a class="btn ghost" href="{{ BASE_PATH }}{{ site.JB.atom_path }}">Atom feed</a>
+</p>
