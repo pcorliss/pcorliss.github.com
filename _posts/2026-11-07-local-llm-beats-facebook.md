@@ -23,7 +23,7 @@ I dug through my `~/git` directory looking for half-finished projects and found 
 
 Reading about other people using LLMs to port/emulate games made me think this was a good chance to see how far I could get. With a single prompt we were off: after a short while it had deobfuscated the JS, analyzed it, and written scripts to rewrite the links and build an offline version. Given more time it built a shim for Facebook login. It also decided there were bugs in various places, and that it would helpfully "fix" them by adding more shims. At that point I had to pause it: it was taking on unasked-for features.
 
-With a little direction I had it on GitHub, [github.com/pcorliss/kobayashi_maru](https://github.com/pcorliss/kobayashi_maru), and hosted on GitHub Pages at [blog.50projects.com/kobayashi_maru/](https://blog.50projects.com/kobayashi_maru/).
+With a little guidance, I was able to resurrect the project, publish the source code on [GitHub](https://github.com/pcorliss/kobayashi_maru), and bring the game back to life at [Kobayashi Maru](https://blog.50projects.com/kobayashi_maru/), where you can play it directly in your browser.
 
 Total time was two to three hours, most of it unmonitored.
 
@@ -51,6 +51,6 @@ It would be an interesting experiment to see whether a state-of-the-art model fr
 - Drive: 1 TB NVMe
 - Model: `qwen3.8-flash-next-iq3_s`
 
-## Play it
+## Play Kobayashi Maru
 
-Play the game at [blog.50projects.com/kobayashi_maru/](https://blog.50projects.com/kobayashi_maru/).
+Try the [Kobayashi Maru browser game](https://blog.50projects.com/kobayashi_maru/).
