@@ -8,3 +8,6 @@ Thumbs.db
 
 .rbenv-version
 .rvmrc
+
+tools/__pycache__/
+__pycache__/
