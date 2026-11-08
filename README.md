@@ -16,6 +16,14 @@ Check that the pins have not drifted:
 python3 tools/check_pages_versions.py
 ```
 
+# Front page
+
+The front page leads with a hand-picked **Top Posts** list; the entries live in
+`_data/top_posts.yml`, in the order you want them shown. Below it sits a
+recent-posts grid generated from `site.posts`. The two are deliberately
+different things - the curated list is never derived from dates or popularity,
+so publishing something new will not shuffle your favourites off the front page.
+
 # Checks
 
 ```

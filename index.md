@@ -7,6 +7,26 @@ custom:
 ---
 {% include JB/setup %}
 
+<section class="post-feed" aria-labelledby="top-posts-title">
+  <h2 class="section-title" id="top-posts-title">Top Posts</h2>
+
+  {% comment %} Hand-picked list, see _data/top_posts.yml. The lookup is only to
+     show a date; a pick whose url has drifted still renders, just undated. {% endcomment %}
+  <ol class="top-list" role="list">
+    {% for pick in site.data.top_posts %}
+      {% assign match = site.posts | where: "url", pick.url | first %}
+      <li>
+        <a href="{{ BASE_PATH }}{{ pick.url }}">{{ pick.title }}</a>
+        {% if match %}
+          <time class="date" datetime="{{ match.date | date: '%Y-%m-%d' }}">{{ match.date | date: '%b %Y' }}</time>
+        {% else %}
+          <span class="date">check _data/top_posts.yml</span>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ol>
+</section>
+
 <section class="post-feed" aria-label="Latest posts">
   <h2 class="section-title">Recent posts</h2>
 

@@ -610,8 +610,44 @@ tbody tr:nth-child(even) { background: #fbfaf6; }
 .link-list .card-excerpt { flex: 1 1 16rem; font-size: .88rem; }
 .empty-state { color: var(--ink-mute); font-style: italic; }
 
+/* Top Posts is hand-picked and ordered, so it is numbered - the numerals carry
+   the meaning here (a ranked shortlist, not a pile). The <ol> already exposes
+   position to assistive tech; role="list" is there because list-style:none
+   makes WebKit/Safari drop the implicit list semantics. */
+.top-list {
+  counter-reset: top;
+  margin: 0 0 2.25rem;
+  padding: 0;
+  list-style: none;
+}
+.top-list li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem .75rem;
+  align-items: baseline;
+  padding: .55rem 0;
+  border-bottom: 1px solid var(--rule-soft);
+}
+.top-list li:last-child { border-bottom: 0; }
+.top-list li::before {
+  counter-increment: top;
+  content: counter(top);
+  flex: 0 0 1.5rem;
+  color: var(--accent);
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+.top-list a { flex: 1 1 16rem; font-weight: 600; }
+.top-list .date {
+  margin-left: auto;
+  color: var(--ink-mute);
+  font-size: .85rem;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
 /* --------------------------------------------------------------------------
-   9b. Front page: recent posts as cards
+   9b. Front page: the curated Top Posts list, and recent posts as cards
    -------------------------------------------------------------------------- */
 .home #article-body, #article-body.wide { max-width: 54rem; }
 
