@@ -11,12 +11,18 @@ custom:
   <h2 class="section-title" id="top-posts-title">Top Posts</h2>
 
   {% comment %} Hand-picked list, see _data/top_posts.yml. The lookup is only to
-     show a date; a pick whose url has drifted still renders, just undated. {% endcomment %}
+     show a date; a pick whose url has drifted still renders, just undated.
+     The data file keeps the urls extensionless (Pages serves both forms, and the
+     bare url reads better), but post.url carries the .html from the permalink in
+     _config.yml - so strip whatever the data has and reattach .html for the
+     lookup only. {% endcomment %}
   <ol class="top-list" role="list">
     {% for pick in site.data.top_posts %}
-      {% assign match = site.posts | where: "url", pick.url | first %}
+      {% assign pick_path = pick.url | remove: ".html" %}
+      {% assign lookup_url = pick_path | append: ".html" %}
+      {% assign match = site.posts | where: "url", lookup_url | first %}
       <li>
-        <a href="{{ BASE_PATH }}{{ pick.url }}">{{ pick.title }}</a>
+        <a href="{{ BASE_PATH }}{{ pick_path }}">{{ pick.title }}</a>
         {% if match %}
           <time class="date" datetime="{{ match.date | date: '%Y-%m-%d' }}">{{ match.date | date: '%b %Y' }}</time>
         {% else %}

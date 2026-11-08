@@ -2,36 +2,39 @@
 # order they should appear. This is deliberate curation, not a generated list:
 # nothing here depends on post dates, so add to it or reorder it by hand.
 #
-#   url    must be an existing post URL (the permalink, /yyyy/mm/title.html)
+#   url    must be an existing post URL, written without the .html: /yyyy/mm/title.
+#          Pages serves both forms, and the bare url is what readers see copied,
+#          so keep it bare here. index.md puts the .html back when it needs to
+#          find the post, since the permalink in _config.yml does carry it.
 #   title  the link text to show, which does not have to match the post's own
 #          title - several of these are shortened on purpose
 #
 # A typo in a url shows up twice over: the entry renders with no date (the
-# lookup below is only for the date), and tools/verify_site.py reports the link
-# as broken, since nothing at that path exists.
-- url: /2026/11/local-llm-beats-facebook.html
+# lookup in index.md is only for the date), and tools/verify_site.py reports the
+# link as broken, since nothing at that path exists.
+- url: /2026/11/local-llm-beats-facebook
   title: "A Local LLM Beats Facebook but not the Kobayashi Maru"
-- url: /2023/04/fixing-rails-stickiness.html
+- url: /2023/04/fixing-rails-stickiness
   title: "Fixing Rails Connection Stickiness to Aurora"
-- url: /2014/12/recovering-git-commits.html
+- url: /2014/12/recovering-git-commits
   title: "Recovering Git Commits"
-- url: /2014/10/rdio-belly-dj.html
+- url: /2014/10/rdio-belly-dj
   title: "Rdio & Belly DJ"
-- url: /2014/10/bringing-the-orchestra-screen-to-tech.html
+- url: /2014/10/bringing-the-orchestra-screen-to-tech
   title: "Bringing the Orchestra Screen to Tech"
-- url: /2014/08/tool-to-generate-s3-expiring-links.html
+- url: /2014/08/tool-to-generate-s3-expiring-links
   title: "Tool to Generate S3 Expiring Links"
-- url: /2014/08/build-your-own-private-docker-registry.html
+- url: /2014/08/build-your-own-private-docker-registry
   title: "Build Your Own Private Docker Registry for $3/month"
-- url: /2014/02/memcached-doesnt-work-way-you-think-it.html
+- url: /2014/02/memcached-doesnt-work-way-you-think-it
   title: "Memcached Doesn't Work the Way You Think It Does"
-- url: /2014/01/fitbit-data-and-weightloss.html
+- url: /2014/01/fitbit-data-and-weightloss
   title: "Fitbit Data and Weightloss"
-- url: /2014/01/law-order.html
+- url: /2014/01/law-order
   title: "Law & Order"
-- url: /2012/02/stripe-ctf.html
+- url: /2012/02/stripe-ctf
   title: "Stripe CTF"
-- url: /2011/08/lightning-talk-geekfest.html
+- url: /2011/08/lightning-talk-geekfest
   title: "Lightning Talk - Geekfest"
-- url: /2010/12/ruby-string-xor-optimizations.html
+- url: /2010/12/ruby-string-xor-optimizations
   title: "Ruby String XOR Optimizations"
