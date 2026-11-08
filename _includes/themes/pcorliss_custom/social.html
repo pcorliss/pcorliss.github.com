@@ -1,11 +1,26 @@
 {% comment %}
   Profile links. Icon-only, so each link carries an accessible name and the
   glyph itself is hidden from assistive tech.
+
+  Mastodon and Bluesky are inline SVG (see _data/icons.yml) instead of Font
+  Awesome glyphs: the 4.7 stylesheet this site loads has no such icon for
+  either. rel="me" on the Mastodon link is functional, not decoration -
+  Mastodon fetches the URL from your profile and looks for an <a> or <link>
+  whose rel contains "me" and whose href matches its canonical profile URL
+  exactly apart from case, so the value in _config.yml has to be spelled right
+  with no trailing slash. Bluesky does not check rel="me"; it is there because
+  it is the convention other verifiers look for.
 {% endcomment %}
 <nav class="social" aria-label="Elsewhere on the web">
-  {% if site.author.twitter %}
-    <a href="https://twitter.com/{{ site.author.twitter }}" rel="me" title="Twitter">
-      <i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span class="label">Twitter</span>
+  {% if site.author.mastodon %}
+    <a rel="me" href="https://{{ site.author.mastodon }}" title="Mastodon">
+      <svg class="mastodon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="{{ site.data.icons.mastodon }}"/></svg><span class="label">Mastodon</span>
+    </a>
+  {% endif %}
+
+  {% if site.author.bluesky %}
+    <a rel="me" href="https://bsky.app/profile/{{ site.author.bluesky }}" title="Bluesky">
+      <svg class="bluesky" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="{{ site.data.icons.bluesky }}"/></svg><span class="label">Bluesky</span>
     </a>
   {% endif %}
 

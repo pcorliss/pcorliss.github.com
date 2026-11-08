@@ -292,7 +292,13 @@ header .hero-inner {
   transition: background .2s ease, color .2s ease, transform .2s ease;
 }
 .social a:hover { background: var(--accent); color: #fff; transform: translateY(-1px); }
-.social svg { width: 1.15em; height: 1.15em; fill: currentColor; }
+.social svg { width: 1.05em; height: 1.05em; fill: currentColor; }
+/* Both marks are drawn from a 24x24 viewBox, but neither fills it the same way
+   and Font Awesome's own glyphs are mostly whitespace around a smaller mark, so
+   the two SVGs need slightly different sizes to sit at the same optical weight
+   as their neighbours. Measured in the browser: 1.05em paints Mastodon ~17px
+   tall (matching the FA glyphs) and Bluesky ~15.5px, hence the bump. */
+.social svg.bluesky { width: 1.18em; height: 1.18em; }
 .social .label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 
 /* ---- content card ------------------------------------------------------- */

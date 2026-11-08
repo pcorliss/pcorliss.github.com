@@ -21,7 +21,7 @@
     <meta property="og:url" content="{{ site.production_url }}{{ page.url }}">
     <meta property="og:image" content="{{ site.production_url }}{{ ASSET_PATH }}/img/background.jpg">
     <meta name="twitter:card" content="{% if page.layout == 'post' %}summary{% else %}summary_large_image{% endif %}">
-    <meta name="twitter:site" content="@{{ site.author.twitter }}">
+    {% if site.author.twitter %}<meta name="twitter:site" content="@{{ site.author.twitter }}">{% endif %}
 
     <!-- Fonts are served from /assets so there is nothing to preconnect to. -->
     <link rel="stylesheet" href="{{ ASSET_PATH }}/css/fonts.css">
