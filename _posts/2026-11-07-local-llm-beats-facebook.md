@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "A Local LLM Beats Facebook but not the Kobayashi Maru"
-description: "Two to three hours, most of it unmonitored, was enough for a local LLM to resurrect a dead browser game. But it couldn't brute-force its way to victory."
+description: "A local LLM resurrected a dead browser game in two hours. Hours of brute-forcing the ending still lost."
 image: /images/KobayashiMaruWinSocial.png
 image_alt: "The Kobayashi Maru ending screen"
 category: Technical
